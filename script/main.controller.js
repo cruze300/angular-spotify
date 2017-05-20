@@ -5,45 +5,71 @@ angular
     SpotifyProvider.setRedirectUri('http://example.com/callback.html');
     SpotifyProvider.setScope('playlist-read-private');
   })
+  .directive("trackspotify", function() {
+    return {
+        templateUrl: '../views/trackList.html'
+    };
+  })
+  // For Artist Search
+  // .directive("artistspotify", function() {
+  //   return {
+  //       templateUrl: '../views/artistList.html'
+  //   };
+  // })
+  // For Album Search
+  // .directive("albumspotify", function() {
+  //   return {
+  //       templateUrl: '../views/albumList.html'
+  //   };
+  // })
+  .directive("toptrackspotify", function() {
+    return {
+        templateUrl: '../views/topTrackList.html'
+    };
+  })
+
   .controller('MainController', ['$scope', 'Spotify', function ($scope, Spotify) {
 
-    $scope.searchArtist = function () {
-      Spotify.search($scope.searchartist, 'artist').then(function (data) {
-        $scope.artists = data.data.artists.items;
-      });
-
-      Spotify.search($scope.searchartist, 'track').then(function (data) {
+    $scope.searchMaster = function () {
+      Spotify.search($scope.searchmaster, 'track').then(function (data) {
         $scope.tracks = data.data.tracks.items;
       });
 
-      Spotify.search($scope.searchartist, 'album').then(function (data) {
-        $scope.albums = data.data.albums.items;
-      });
+      // Artist Service Call
+      // Spotify.search($scope.searchmaster, 'artist').then(function (data) {
+      //   $scope.artists = data.data.artists.items;
+      // });
+
+      // Album Service Call
+      // Spotify.search($scope.searchmaster, 'album').then(function (data) {
+      //   $scope.albums = data.data.albums.items;
+      // });
     };
 
     // Top List Arrays
     $scope.topLists = [];
 
     // Add a Item to the Top list
-    $scope.addItem = function () {
+    $scope.addItem = function (track, $event, $index) {
+        if($scope.topLists.length < 10) {
+            $scope.alertMax = false;
+            $scope.topLists.push({
+               track: track.name,
+               artist: track.artists[0].name,
+               album: track.album.name,
+               note: "",
+               customImage: track.album.images[0].url
+            });
+        } else {
+           $scope.alertMax = true;
+        }
+    };
 
-        $scope.topLists.push({
-           track: $scope.topTrack,
-           artist: $scope.topArtist,
-           album: $scope.topAlbum,
-           note: $scope.topNote,
-           customImage: $scope.topImgSource
-        });
-
-        // Clear input fields after push
-        // $scope.topTrack = "";
-        // $scope.topArtist = "";
-        // $scope.topAlbum = "";
-        // $scope.topNote = "";
-        // $scope.topImgSource = "";
-
-        console.log($scope.topLists);
-
+    // JSON Obj Console Print
+    $scope.getJson = function () {
+      $scope.myJsonString = JSON.stringify($scope.topLists);
+      console.log('Json String Start ' + $scope.myJsonString);
+      $scope.alertConsole = true;
     };
 
   }]);

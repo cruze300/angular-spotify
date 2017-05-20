@@ -1,0 +1,11 @@
+<h1>Songs</h1>
+<ul>
+  <li ng-repeat="track in tracks">
+    <a ng-click="addItem(track)" target="_blank">
+      <img ng-src="{{track.album.images[0].url}}" alt=""/>
+      <div class="textData">
+        <span data-ng-bind="track.name"></span>
+      </div>
+    </a>
+  </li>
+</ul>

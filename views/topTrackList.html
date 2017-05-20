@@ -1,0 +1,20 @@
+<h1 ng-if="!alertMax">Top 10 List</h1>
+<h1 ng-if="alertMax">Top 10 List Full</h1>
+<ul>
+  <li ng-repeat="topList in topLists track by $index">
+    <a class="pointerDefault" ng-href="{{topList.external_urls.spotify}}" target="_blank">
+      <img ng-src="{{topList.customImage}}" alt="">
+      <div class="textData">
+        <label>Track</label>
+        <span data-ng-bind="topList.track"></span>
+        <label>Artist</label>
+        <span data-ng-bind="topList.artist"></span>
+        <label>Album</label>
+        <span data-ng-bind="topList.album"></span>
+      </div>
+      <input type="text" class="noteText" placeholder="Note (Optional)" data-ng-model="topList.note"/>
+    </a>
+  </li>
+</ul>
+<a ng-click="getJson();" class="btn btn-default pull-right">Dump JSON in Console</a>
+<h1 class="pull-right clearRight text-right" ng-if="alertConsole">Data dumped successful in console</h1>

@@ -5,6 +5,7 @@
   <title>Spotify</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../style/style.css">
+  <link rel="icon" href="//d2c87l0yth4zbw-2.global.ssl.fastly.net/i/_global/favicon.png">
 </head>
 
 <header>
@@ -14,55 +15,20 @@
 <body ng-controller="MainController">
   <div class="masterWrap">
     <div class="searchBar marginBottom">
-      <label class="floatLeft">Search</label>
-      <input type="text" class="clearLeft floatLeft" ng-model="searchartist" ng-change="searchArtist()" placeholder="Search">
+      <label class="pull-left">Search</label>
+      <input type="text" class="clearLeft pull-left" ng-model="searchmaster" ng-change="searchMaster()" placeholder="Search">
     </div>
 
     <div class="col-md-6">
-      <h1>Artist</h1>
-      <ul>
-        <li ng-repeat="artist in artists" style="">
-          <a class="media" ng-click="addItem()" target="_blank" ng-model="topArtist">
-            <img ng-src="{{artist.images[0].url}}" alt="" ng-model="topArtist"/>
-            <span class="media-details" data-ng-bind="artist.name" ng-model="topArtist"></span>
-          </a>
-        </li>
-      </ul>
+      <trackspotify onitem-click="addItem(track);"></trackspotify>
 
-      <h1>Song</h1>
-      <ul>
-        <li ng-repeat="track in tracks">
-          <a class="media" ng-click="addItem()" target="_blank" ng-model="topTrack">
-            <img ng-src="{{track.album.images[0].url}}" alt="" ng-model="topTrack"/>
-            <span class="media-details" data-ng-bind="track.name" ng-model="topTrack"></span>
-          </a>
-        </li>
-      </ul>
+      <!-- <artistspotify></artistspotify> -->
 
-      <h1>Album</h1>
-      <ul>
-        <li ng-repeat="album in albums">
-          <a class="media" ng-click="addItem()" target="_blank" ng-model="topAlbum">
-            <img ng-src="{{album.images[0].url}}" alt="" ng-model="topAlbum"/>
-            <span class="media-details" data-ng-bind="album.name" ng-model="topAlbum"></span>
-          </a>
-        </li>
-      </ul>
+      <!-- <albumspotify></albumspotify> -->
     </div>
 
     <div class="col-md-6">
-      <h1>Top 10 List</h1>
-      <ul>
-        <li ng-repeat="topList in topLists">
-          <a class="media" ng-href="{{topList.external_urls.spotify}}" target="_blank">
-            <img ng-src="{{topList.images[0].url}}" alt="">
-            <span class="media-details" data-ng-bind="topList.track.name"></span>
-            <span class="media-details" data-ng-bind="topList.artist.name"></span>
-            <span class="media-details" data-ng-bind="topList.album.name"></span>
-            <input type="text" class="noteText" placeholder="Note (Optional)"/>
-          </a>
-        </li>
-      </ul>
+      <toptrackspotify></toptrackspotify>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -1,0 +1,11 @@
+<h1>Artist</h1>
+<ul>
+  <li ng-repeat="artist in artists" style="">
+    <a ng-click="addItem(artist)" target="_blank">
+      <img ng-src="{{artist.images[0].url}}" alt=""/>
+      <div class="textData">
+        <span data-ng-bind="artist.name"></span>
+      </div>
+    </a>
+  </li>
+</ul>

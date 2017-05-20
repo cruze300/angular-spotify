@@ -41,7 +41,7 @@
     float: left;
     width: 100%;
     font-size: 16px;
-    margin: 5px 0 0 0;
+    margin: 5px 0 10px 0;
     color: #afafaf;
   }
 
@@ -50,8 +50,8 @@
     clear: left;
   }
 
-  .floatLeft {
-    float: left;
+  .clearRight {
+    clear: left;
   }
 
   .marginBottom {
@@ -95,7 +95,7 @@
     float: left;
     width: 100%;
     border: 1px solid #352d2d;
-    max-height: 300px;
+    max-height: 350px;
     overflow: auto;
     margin: 0 0 30px 0;
     padding: 10px;
@@ -104,20 +104,46 @@
   ul li {
     float: left;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 
-  .media {
+  ul li a {
     display: table;
     width: 100%;
+    cursor: pointer;
   }
-  .media img {
-    display: table-cell;
-    max-width: 100%;
+
+  ul li a img {
+    float: left;
+    width: 20%;
   }
-  .media-details {
-    padding-left: 1em;
-    vertical-align: middle;
-    display: table-cell;
-    width: 90%;
+
+  ul li a .textData {
+    float: left;
+    padding-left: 10px;
+    width: 80%;
+  }
+
+  ul li a .textData label {
+    float: left;
+    clear: left;
+    margin: 10px 0 0 0;
+    line-height: 10px;
+  }
+
+  ul li a span {
+    color: #fff;
+    clear: left;
+    float: left;
+    font-size: 13px;
+  }
+
+  .noteText {
+    float: left;
+    width: 100%;
+    margin: 3px 0 10px 0;
+  }
+
+  .pointerDefault {
+    cursor: default;
   }
