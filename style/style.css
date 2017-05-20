@@ -1,0 +1,123 @@
+  body {
+    width: 100%;
+    font-family: Circular,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222326;
+    background: #1B1B1B;
+    float: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  /*Input Reset*/
+  input[type='text'], textarea {
+    padding: 8px 10px;
+    min-width: 200px;
+    background: #151515;
+    border: 1px solid #352d2d;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  input[type='text']:focus, textarea:focus,
+  input[type='text']:after, textarea:after,
+  input[type='text']:before, textarea:before,
+  input[type='text']:active, textarea:active,
+  input[type='text']:hover, textarea:hover {
+    border: 1px solid #352d2d !important;
+    outline: none;
+    color: #fff;
+  }
+
+  /*Text Reset*/
+  label {
+    float: left;
+    font-size: 11px;
+    color: #afafaf;
+  }
+
+  h1 {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    margin: 5px 0 0 0;
+    color: #afafaf;
+  }
+
+  /*Spacing Reset*/
+  .clearLeft {
+    clear: left;
+  }
+
+  .floatLeft {
+    float: left;
+  }
+
+  .marginBottom {
+    margin-bottom: 30px;
+  }
+
+  .col-md-6 {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  .col-md-6:last-child {
+    padding: 0 0 0 10px;
+  }
+
+  .masterWrap {
+    float: left;
+    width: 100%;
+    padding: 10px 30px;
+  }
+
+  header {
+    float: left;
+    width: 100%;
+    background: #000;
+    padding: 10px 30px;
+  }
+
+  header img {
+    float: left;
+  }
+
+  .searchBar {
+    float: left;
+    width: 100%;
+  }
+
+  ul {
+    list-style: none;
+    float: left;
+    width: 100%;
+    border: 1px solid #352d2d;
+    max-height: 300px;
+    overflow: auto;
+    margin: 0 0 30px 0;
+    padding: 10px;
+  }
+
+  ul li {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .media {
+    display: table;
+    width: 100%;
+  }
+  .media img {
+    display: table-cell;
+    max-width: 100%;
+  }
+  .media-details {
+    padding-left: 1em;
+    vertical-align: middle;
+    display: table-cell;
+    width: 90%;
+  }
